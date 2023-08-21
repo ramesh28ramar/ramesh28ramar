@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function add()
+{
+  var numOne, numTwo, sum, eper, adv;
+  numOne = parseInt(document.getElementById("first").value);
+  numTwo = parseInt(document.getElementById("second").value);
+  eper = parseInt(document.getElementById("extper").value);
+  adv= parseInt(document.getElementById("adv").value);
+  eper =  eper * 50;
+  sum = numOne * numTwo + eper;
+  Balance = sum - adv;
+
+  document.getElementById("ep").value = eper ;style.color = "#ff0000";
+  document.getElementById("answer").value = sum;
+  document.getElementById("balc").value = Balance;
+}
+</script>
+</head>
+<header>
+    <img src="images/hotal.jpg" width="100%" height="50%">
+</header>
+
+<body>
+<p style="background-color:DodgerBlue;">Enter Total no of Persons : <input id="first"></p>
+<p>Enter Extra Persons: <input id="extper"></p> 
+<p>Enter Room Rent: <input id="second"></p>
+<p>Enter Advance Amount: <input id="adv"></p>
+<button  style="background-color:Tomato;" onclick="add()">Total rent </button>
+<p>eper = <input id="ep"></p>
+<p>Sum = <input id="answer"></p>
+<p style="background-color:Tomato;">Balance = <input id="balc"></p>
+
+
+</body>
+</html>
+ 
