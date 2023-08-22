@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inox</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function BookClick(){
+            document.getElementById("mob").innerHTML = document.getElementById("elc").value;
+            document.getElementById("lblCinema").innerHTML = document.getElementById("lstCinema").value;
+            document.getElementById("lblDate").innerHTML = document.getElementById("lstDate").value;
+            document.getElementById("lblTime").innerHTML = document.getElementById("lstTime").value;
+            document.getElementById("lblSeats").innerHTML = document.getElementById("lstSeats").value;
+
+            var poster = document.getElementById("poster");
+            var movieName = document.getElementById("lstMovie").value;
+
+            if(movieName=="Kantara") {
+                poster.src = "../public/images/kantara.png";
+            } else {
+                poster.src = "../public/images/ram.png";
+            } 
+            
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <header class="mt-2 bg-dark p-2 d-flex justify-content-between">
+        <div>
+            <select id="elc" class="form-select">
+                <option>Mobie</option>
+                <option>Select Mobile</option>
+                <option>Apple</option>
+                <option>Samsung</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstCinema" class="form-select">
+                <option>Select Model</option>
+                <option>IPNONE 12</option>
+                <option>SAMSUNG Z FILP</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstDate" class="form-select">
+                <option>Price is..</option>
+                <option>50000/-</option>
+                <option>60000/-</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstTime" class="form-select">
+                <option>Select QTY</option>
+                <option> 1 NO</option>
+                <option>2 NO</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstSeats" class="form-select">
+                <option>Availabilty</option>
+                <option>yes</option>
+                <option>no</option>
+                <option>not app</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="BookClick()" data-bs-target="#summary" data-bs-toggle="modal" class="btn btn-danger">Book</button>
+        </div>
+    </header>
+    <div class="modal fade" id="summary">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Booking Summary</h2>
+                    <button data-bs-dismiss="modal" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card p-2">
+                        <img height="200" class="card-img-top" id="poster">
+                        <div class="card-body">
+                            <dl>
+                                <dt>Mobile Name</dt>
+                                <dd id="mob"></dd>
+                                <dt>Model</dt>
+                                <dd id="lblCinema"></dd>
+                                <dt>Price</dt>
+                                <dd id="lblDate"></dd>
+                                <dt>QTY</dt>
+                                <dd id="lblTime"></dd>
+                                <dt>Stock</dt>
+                                <dd id="lblSeats"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+
